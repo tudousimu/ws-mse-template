@@ -1,0 +1,81 @@
+LIST OF SYMBOLS AND SHORTCUTS
+In the text the text must be bold and exactly as written.
+To make the symbol, type the exact text needed, highlight it then click the "star" button.
+First part of the line is what to type, the second part will be explanatory after a hyphen.
+
+--------------------------------------------
+
+// Types of abilities
+ACT
+CONT
+AUTO
+
+// Card States
+STAND
+REST
+REVERSE
+
+// Stock Costs
+P1
+P2
+P3
+P4
+P5
+P6
+
+// Climax or Effect Symbols
+DRAW
+WIND
+BURN
+DOOR
+GOLDBAR
+GATE
+BAG
+STANDBY
+CHOICE
+
+// Keywords
+ACCELERATE
+ALARM
+ASSIST
+BACKUP
+BOND
+BRAINSTORM
+CHANGE
+COUNTER (ICON)
+CXCOMBO
+ENCORE
+EXPERIENCE
+FORCE
+FUSION
+GREATPERFORMANCE
+MEMORY
+RECOLLECTION
+RESONATE
+SHIFT (ICON)
+SUNDER
+
+// Shift - Format is "L<<#LEVEL>>SHIFT"
+L0SHIFT
+L1SHIFT
+L2SHIFT
+L3SHIFT
+
+// Backups - Format is "L<<#LEVEL>>B<<#POWER>>"
+L0B0
+L0B500
+L0B1000
+L1B0
+L1B500
+L1B1000
+L1B1500
+L1B2000
+L1B2500
+L1B3000
+L2B0
+L2B500
+L2B1500
+L2B2000
+L2B2500
+L2B3000
+L2B4000

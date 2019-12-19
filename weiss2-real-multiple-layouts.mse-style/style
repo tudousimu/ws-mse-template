@@ -1,0 +1,711 @@
+﻿mse version: 2.0.0
+full name: All Card Types
+short name: Standard
+icon: icon.png
+position hint: 1
+version: 2019-01-23
+game: weiss2
+
+depends on:
+	package: weiss2.mse-game
+	version: 2019-01-23
+depends on: 
+	package: weiss2-symbols.mse-symbol-font
+
+card width: 448
+card height: 626
+card dpi: 178
+
+card style:
+	
+	color:
+		top: { 0 }
+		left:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 448
+			}
+		width: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 448
+				else if card.card_type == "climax" then 626
+			}
+		height:  
+			{
+				if card.card_type == "character" or card.card_type == "event" then 626
+				else if card.card_type == "climax" then 448
+			}
+		render style: image
+		z index: 0
+		popup style: in place
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		choice images:
+			A - Weiss Yellow: { climax_and_character_colored_card(soul: card.soul, color: "A - Weiss Yellow", type: card.card_type) }
+			B - Weiss Green: { climax_and_character_colored_card(soul: card.soul, color: "B - Weiss Green", type: card.card_type) }
+			C - Weiss Red: { climax_and_character_colored_card(soul: card.soul, color: "C - Weiss Red", type: card.card_type) }
+			D - Weiss Blue: { climax_and_character_colored_card(soul: card.soul, color: "D - Weiss Blue", type: card.card_type) }
+			E - Schwarz Yellow: { climax_and_character_colored_card(soul: card.soul, color: "E - Schwarz Yellow", type: card.card_type) }
+			F - Schwarz Green: { climax_and_character_colored_card(soul: card.soul, color: "F - Schwarz Green", type: card.card_type) }
+			G - Schwarz Red: { climax_and_character_colored_card(soul: card.soul, color: "G - Schwarz Red", type: card.card_type) }
+			H - Schwarz Blue: { climax_and_character_colored_card(soul: card.soul, color: "H - Schwarz Blue", type: card.card_type) }
+	image:
+		top: 0
+		left: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 448
+			}
+		width: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 448
+				else if card.card_type == "climax" then 626
+			}
+		height:  
+			{
+				if card.card_type == "character" or card.card_type == "event" then 626
+				else if card.card_type == "climax" then 448
+			}
+		mask:
+			{
+				if card.card_type == "character" then "character/mask.png"
+				else if card.card_type == "climax" then "climax/mask.png"
+				else if card.card_type == "event" then "event/mask.png"
+			}
+		z index: 1
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+	level:
+		top: 13
+		left: 16
+		width: 50
+		height: 60
+		z index: 2
+		render style: image
+		visible:
+			{
+				if card.card_type == "character" or card.card_type == "event" then true
+				else if card.card_type == "climax" then false
+			}
+		choice images:
+			zero: { card_colored_level(level: 0, color: card.color) }
+			one: { card_colored_level(level: 1, color: card.color) }
+			two: { card_colored_level(level: 2, color: card.color) }
+			three: { card_colored_level(level: 3, color: card.color) }
+	cost:
+		top: 73
+		left: 16
+		width: 50
+		height: 42
+		z index: 3
+		render style: image
+		visible:
+			{
+				if card.card_type == "character" or card.card_type == "event" then true
+				else if card.card_type == "climax" then false
+			}
+		choice images:
+			zero: cost\c0.png
+			one: cost\c1.png
+			two: cost\c2.png
+			three: cost\c3.png
+			four: cost\c4.png
+			five: cost\c5.png
+			six: cost\c6.png
+			seven: cost\c7.png
+			eight: cost\c8.png
+			nine: cost\c9.png
+			ten: cost\c10.png
+			eleven: cost\c11.png
+			twelve: cost\c12.png
+			thirteen: cost\c13.png
+			fourteen: cost\c11.png
+			fifteen: cost\c15.png
+			twenty: cost\c20.png
+	soul:
+		top: 584
+		left: 127
+		width: 46
+		height: 20
+		render style: hidden
+		visible:
+			{
+				if card.card_type == "character" then true
+				else if card.card_type == "climax" or card.card_type == "event" then false
+			}
+		z index: 4
+	traits:
+		left: 173
+		top: 584
+		width: 46
+		height: 20
+		render style: hidden
+		visible:
+			{
+				if card.card_type == "character" then true
+				else if card.card_type == "climax" or card.card_type == "event" then false
+			}
+		z index: 4
+	backup:
+		top: 118
+		left: 16
+		width: 50
+		height: 50
+		z index: 15
+		render style: image
+		visible:
+			{
+				if card.card_type == "character" or card.card_type == "event" then true
+				else if card.card_type == "climax" then false
+			}
+		choice images:
+			no: backup\nobackup.png
+			backup: backup\back.png
+			clockshift: backup\clock.png
+	cardname:
+		top: 
+			{
+				if card.card_type == "character" then 560
+				else if card.card_type == "event" then 576
+				else if card.card_type == "climax" then 379
+			}
+		left:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 152
+				else if card.card_type == "climax" then 51
+			}
+		height: 24
+		width: 204
+		z index: 5
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		alignment: top center stretch if-overflow
+		font:
+			name: Rotis Serif Std
+			weight: bold
+			size: 13
+			color: rgb(255,255,255)
+			shadow color: rgb(0, 0, 0)
+			shadow displacement x: 1
+			shadow displacement y: 1
+			shadow blur: 1
+	trait one:
+		top: 588
+		left: 212
+		width: 90
+		height: 14
+		z index: 6
+		visible:
+			{
+				if card.card_type == "character" then true
+				else if card.card_type == "climax" or card.card_type == "event" then false
+			}
+		alignment: top center stretch if-overflow
+		font:
+			name: VAG Rounded
+			weight: bold
+			size: 10
+			color: rgb(0,0,0)
+	trait two:
+		top: 588
+		left: 314
+		width: 90
+		height: 14
+		z index: 7
+		visible:
+			{
+				if card.card_type == "character" then true
+				else if card.card_type == "climax" or card.card_type == "event" then false
+			}
+		alignment: top center stretch if-overflow
+		font:
+			name: VAG Rounded
+			weight: bold
+			size: 10
+			color: rgb(0,0,0)
+	power:
+		top: 570
+		left: 31
+		width: 90
+		height: 35
+		z index: 8
+		visible:
+			{
+				if card.card_type == "character" then true
+				else if card.card_type == "climax" or card.card_type == "event" then false
+			}
+		alignment: middle center
+		font:
+			name: Warnock Pro Smbd
+			weight: bold
+			size: 23
+			color: rgb(255,255,255)
+	serial: 
+		top: 
+			{
+				if card.card_type == "character" then 554
+				else if card.card_type == "event" then 578
+				else if card.card_type == "climax" then 268
+			}
+		left: 
+			{
+				if card.card_type == "character" then 44
+				else if card.card_type == "event" then 42
+				else if card.card_type == "climax" then 48
+			}
+		width: 77
+		height: 10
+		z index: 9
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		alignment: top center stretch if-overflow
+		font:
+			name: VAG Rounded
+			weight: bold
+			size: 7
+			color: rgb(0,0,0)
+	rarity:
+		top: 
+			{
+				if card.card_type == "character" then 554
+				else if card.card_type == "event" then 579
+				else if card.card_type == "climax" then 331
+			}
+		left: 
+			{
+				if card.card_type == "character" then 109
+				else if card.card_type == "event" then 103
+				else if card.card_type == "climax" then 47
+			}
+		width: 15
+		height: 10
+		render style: hidden
+		z index: 10
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+	flavor text:
+		bottom: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then flavor_bottom(height: card_rules_height()+35, rules: card.rules_text != ""+35, event: card.card_type == "event")
+				else if card.card_type == "climax" then 257
+			}
+		left: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 20
+				else if card.card_type == "climax" then 95
+			}
+		width: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 406
+				else if card.card_type == "climax" then 350
+			}
+		height: { max(19, card_flavor_height())+30}
+		z index: 15
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		alignment: bottom center
+		font:
+			name: ITC Souvenir STD Light
+			size: 11
+			weight: normal
+			style: normal
+			color: rgb(0,0,0)		
+	rules text:
+		bottom: 	
+			{
+				if card.card_type == "character" then 513
+				else if card.card_type == "event" then 527
+				else if card.card_type == "climax" then 16
+			}
+		left:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 24
+				else if card.card_type == "climax" then 17
+			}
+		width: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 398
+				else if card.card_type == "climax" then 209
+			}
+		height: { max(19, card_rules_height()) }
+		z index: 16
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		alignment: bottom left justify
+		font:
+			name: VAG Rounded Light SSi Thin
+			size: 10
+			weight: normal
+		symbol font:
+			name: weiss2-symbols
+			size: 12
+	name text:
+		bottom: 
+			{
+				if card.card_type == "character" then 535
+				else if card.card_type == "event" then 552
+				else if card.card_type == "climax" then 270
+			}
+		left: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 50
+				else if card.card_type == "climax" then 70
+			}
+		width:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 355
+				else if card.card_type == "climax" then 310
+			}
+		height: 19
+		z index: 15
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		alignment: bottom center stretch if-overflow
+		font:
+			name: Heisei Mincho Std W7
+			size: 9
+			weight: bold
+			style: bold
+			color: rgb(0,0,0)		
+	trigger:
+		top: 14
+		left: 385
+		width: 51
+		height: 58
+		z index: 17
+		render style: image
+		choice images:
+			none: triggers\none.png
+			soul: triggers\soul.png
+			goldbar: triggers\goldbar.png
+			gate: triggers\gate.png
+			book: triggers\book.png
+			shot: triggers\shot.png
+			door: triggers\door.png
+			bounce: triggers\bounce.png
+			goldbag: triggers\goldbag.png
+			standby: triggers\standby.png
+			choice: triggers\choice.png
+	extra trigger:
+		top: 14
+		left: 333
+		width: 51
+		height: 58
+		z index: 18
+		visible:
+			{
+				if card.card_type == "character" or card.card_type == "event" then false
+				else if card.card_type == "climax" then true
+			}
+		render style: image
+		choice images:
+			off:
+			none: triggers\none.png
+			soul: triggers\soul.png
+			goldbar: triggers\goldbar.png
+			gate: triggers\gate.png
+			book: triggers\book.png
+			shot: triggers\shot.png
+			door: triggers\door.png
+			bounce: triggers\bounce.png
+			goldbag: triggers\goldbag.png
+			standby: triggers\standby.png
+			choice: triggers\choice.png
+	card type:
+		top: 
+			{
+				if card.card_type == "character" then 553
+				else if card.card_type == "event" then 579
+				else if card.card_type == "climax" then 247
+			}
+		left: 
+			{
+				if card.card_type == "character" then 23
+				else if card.card_type == "event" then 20
+				else if card.card_type == "climax" then 47
+			}
+		width: 19
+		height: 10
+		z index: 19
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		render style: hidden
+	artist name:
+		top: 
+			{
+				if card.card_type == "character" then 608
+				else if card.card_type == "event" then 608
+				else if card.card_type == "climax" then 260
+			}
+		left:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 61
+				else if card.card_type == "climax" then 20
+			}
+		height: 18
+		width: 323
+		z index: 20
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		alignment: top center stretch if-overflow
+		font:
+			name: Calibri
+			size: 8
+			color: 
+				{
+					if card.color == "E - Schwarz Yellow" then rgb(255,230,0)
+					else if card.color == "F - Schwarz Green" then rgb(255,230,0)
+					else if card.color == "G - Schwarz Red" then rgb(255,230,0)
+					else if card.color == "H - Schwarz Blue" then rgb(255,230,0)
+					else if card.color == "A - Weiss Yellow" then rgb(76,76,0)
+					else if card.color == "B - Weiss Green" then rgb(76,76,0)
+					else if card.color == "C - Weiss Red" then rgb(76,76,0)
+					else if card.color == "D - Weiss Blue" then rgb(76,76,0)
+				}
+extra card field:
+	type: choice
+	name: bottom bar
+	editable: false
+	choice:	default
+extra card field:
+	type: choice
+	name: top bar
+	editable: false
+	choice:	default
+extra card field:
+	type: choice
+	name: white bar
+	editable: false
+	choice:	default
+extra card field:
+	type: choice
+	name: flavor bar
+	editable: false
+	choice:	default
+extra card field:
+	type: choice
+	name: japbar
+	editable: true
+	choice:	Yellow
+	choice:	Blue
+	choice:	Red
+	choice:	Green
+extra card field:
+	type: image
+	name: series
+	editable: true
+extra card field:
+	type: text
+	name: costnumber
+	editable: true
+extra card style:
+	bottom bar:
+		left: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 426
+				else if card.card_type == "climax" then 11
+			}
+		top : 
+			{
+				if card.card_type == "character" then 548
+				else if card.card_type == "event" then 562
+				else if card.card_type == "climax" then 228
+			}
+		width: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 410
+				else if card.card_type == "climax" then 215
+			}
+		height: 5
+		z index: 11
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 180
+				else if card.card_type == "climax" then 90
+			}
+		render style: image
+		choice images:
+			default: { card_color_bar() }
+	top bar:
+		left: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 18
+				else if card.card_type == "climax" then 21 + card_rules_height()
+			}
+		top : 
+			{
+				if card.card_type == "character" and card_rules_height() == 0 then 503
+				else if card.card_type == "character" then 503 - card_rules_height()
+				else if card.card_type == "event" then 520 - card_rules_height()
+				else if card.card_type == "climax" then 13
+			}
+		width: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 410
+				else if card.card_type == "climax" then 215
+			}
+		height: 5
+		z index: 12
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		render style: image
+		choice images:
+			default: { card_color_bar() }
+	white bar:
+		left: 
+			{
+				if card.card_type == "character" then 18
+				else if card.card_type == "event" then 19
+				else if card.card_type == "climax" then 16
+			}
+		bottom: 
+			{
+				if card.card_type == "character" then 543
+				else if card.card_type == "event" then 557
+				else if card.card_type == "climax" then 13
+			}
+		width: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 410
+				else if card.card_type == "climax" then 215
+			}
+		height:
+			script:
+				if card.card_type = "character" or card.card_type == "event" then max(19, card_rules_height()+35)
+				else if card.card_type == "climax" then max(19, card_rules_height())
+		z index: 13
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		render style: image
+		choice images:
+			default: bars\whitebar.png
+	flavor bar:
+		left: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 20
+				else if card.card_type == "climax" then 95
+			}
+		bottom: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then flavor_bottom(height: card_rules_height()+34, rules: card.rules_text != ""+35, event: card.card_type == "event")
+				else if card.card_type == "climax" then 227
+			}
+		width:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 406
+				else if card.card_type == "climax" then 398
+			}
+		height: 
+			script:
+				if card.flavor_text != "" then max(19, card_flavor_height())
+				else 0
+		z index: 14
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		render style: image
+		choice images:
+			default: bars\flavorbar.png
+	japbar:
+		left: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 20
+				else if card.card_type == "climax" then 65
+			}
+		bottom: 
+			{
+				if card.card_type == "character" then 540
+				else if card.card_type == "event" then 557
+				else if card.card_type == "climax" then 250
+			}
+		width:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 406
+				else if card.card_type == "climax" then 350
+			}
+		height: 23
+		z index: 14
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		render style: image
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		render style: image
+		choice images:
+			Yellow: bars\yellow.png
+			Blue: bars\blue.png
+			Red: bars\red.png
+			Green: bars\green.png
+	series:
+		left: 
+			{
+				if card.card_type == "character" or card.card_type == "event" then 370
+				else if card.card_type == "climax" then 385
+			}
+		bottom: 
+			{
+				if card.card_type == "character" then 583
+				else if card.card_type == "event" then 598
+				else if card.card_type == "climax" then 520
+			}
+		width:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 52
+				else if card.card_type == "climax" then 80
+			}
+		height:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 27
+				else if card.card_type == "climax" then 42
+			}
+		z index: 14
+		angle:
+			{
+				if card.card_type == "character" or card.card_type == "event" then 0
+				else if card.card_type == "climax" then 270
+			}
+		default: series\series.png

@@ -1,0 +1,415 @@
+﻿mse version: 2.0.0
+full name: Real Weiss
+short name: RWeiss
+icon: card-back.jpg
+position hint: 6
+version: 2019-01-23
+
+#### scripts
+
+
+init script: include file: script
+
+#### fields
+
+card field:
+	type: choice
+	name: color
+	description: The color of the card.
+	choice: A - Weiss Yellow
+	choice: B - Weiss Green
+	choice: C - Weiss Red
+	choice: D - Weiss Blue
+	choice: E - Schwarz Yellow
+	choice: F - Schwarz Green
+	choice: G - Schwarz Red
+	choice: H - Schwarz Blue
+card field:
+	type: image
+	name: image
+	description: The card's image.
+card field:
+	type: text
+	name: cardname
+	description: Name of the card.
+	card list column: 1
+	card list visible: true
+	card list width: 100
+	card list alignment: center
+card field:
+	type: choice
+	name: level
+	description: The level of the card.
+	choice: zero
+	choice: one
+	choice: two
+	choice: three
+card field:
+	type: choice
+	name: cost
+	description: The cost of the card.
+	choice: zero
+	choice: one
+	choice: two
+	choice: three
+	choice: four
+	choice: five
+	choice: six
+	choice: seven
+	choice: eight
+	choice: nine
+	choice: ten
+	choice: eleven
+	choice: twelve
+	choice: thirteen
+	choice: fourteen
+	choice: fifteen
+	choice: twenty
+card field:
+	type: choice
+	name: soul
+	choice: one
+	choice: two
+	choice: three
+card field:
+	type: choice
+	name: backup
+	choice: no
+	choice: backup
+	choice: clockshift
+card field:
+	type: text
+	name: trait one
+	description: The first trait.
+	card list column: 4
+	card list visible: true
+	card list width: 100
+	card list alignment: center
+card field:
+	type: text
+	name: trait two
+	description: The second trait.
+	card list column: 5
+	card list visible: true
+	card list width: 100
+	card list alignment: center
+card field:
+	type: text
+	name: power
+	script: numeric(value)
+	description: Power of the card.
+	card list column: 2
+	card list visible: true
+	card list width: 100
+	card list alignment: center
+card field:
+	type: text
+	name: serial
+	editable: true
+	save value: false
+	identifying: true
+	script: card_serial()
+	description: Serial of the card.
+	card list column: 8
+	card list visible: true
+	card list width: 100
+	card list alignment: center
+card field:
+	type: choice
+	name: rarity
+	description: The rarity of the card.
+	choice: SSP
+	choice: SP
+	choice: RRR
+	choice: SR
+	choice: RR+
+	choice: RR
+	choice: R
+	choice: U
+	choice: C
+	choice: CR
+	choice: CC
+	choice: (Alternate Art)
+	choice: PR
+	choice: TD
+	choice: XR
+	choice: SEC
+	card list column: 2
+	card list visible: true
+	card list width: 100
+	card list alignment: center
+card field:
+	type: text
+	name: rules text
+	multi line: true
+	description: The rules text for the card.
+	script: auto_bold(value)
+card field:
+	type: text
+	name: name text
+	multi line: false
+	description: The Japanese name for the card.
+card field:
+	type: text
+	name: flavor text
+	multi line: true
+	description: The flavor text for the card.
+card field:
+	type: text
+	name: artist name
+	multi line: false
+	description: The artist who drew the picture.
+card field:
+	type: choice
+	name: trigger
+	description: The card's trigger
+	choice: none
+	choice: soul
+	choice: goldbar
+	choice: gate
+	choice: book
+	choice: shot
+	choice: door
+	choice: bounce
+	choice: goldbag
+	choice: standby
+	choice: choice
+card field:
+	type: choice
+	name: extra trigger
+	description: The card's trigger
+	choice: off
+	choice: none
+	choice: soul
+	choice: goldbar
+	choice: gate
+	choice: book
+	choice: shot
+	choice: door
+	choice: bounce
+	choice: goldbag
+	choice: standby
+	choice: choice
+card field:
+	type: choice
+	name: card type
+	description: The type of card it is.
+	choice: character
+	choice: climax
+	choice: event
+card field:
+	type: choice
+	name: traits
+	description: The number of traits the card has
+	choice: 0
+	choice: 1
+	choice: 2
+card field:
+	type: choice
+	name: bar
+	choice: A
+	choice: B
+	choice: C
+	choice: D
+	choice: E
+	choice: F
+	choice: G
+	choice: H
+#### set fields
+
+set field:
+	type: text
+	name: set name
+	description: The name of the set.
+set field:
+	type: text
+	name: set id
+	description: The 3-letter reference of the series.
+set field:
+	type: text
+	name: subset id
+	description: The letter-number-number of the set.
+	
+#### sorting
+card list color script:
+	input := card.color
+	if      input == "A - Weiss Yellow" then rgb(255,210,0)
+	else if input == "B - Weiss Green" then rgb(0,168,0)
+	else if input == "C - Weiss Red"   then rgb(168,0,0)
+	else if input == "D - Weiss Blue"  then rgb(0,64,168)
+	else if input == "E - Schwarz Yellow" then rgb(255,210,0)
+	else if input == "F - Schwarz Green" then rgb(0,168,0)
+	else if input == "G - Schwarz Red"   then rgb(168,0,0)
+	else if input == "H - Schwarz Blue"  then rgb(0,64,168)
+	
+#### card scripts
+add cards script:
+	name: &Extra Booster Yellow
+	description: Adds an Extra Booster's worth of color.
+	script:
+		[ new_card([rarity: "R", color: "A - Weiss Yellow"])
+		, new_card([rarity: "R", color: "A - Weiss Yellow"])
+		, new_card([rarity: "R", color: "A - Weiss Yellow"])
+		, new_card([rarity: "R", color: "A - Weiss Yellow"])
+		, new_card([rarity: "R", color: "A - Weiss Yellow"])
+		, new_card([rarity: "R", color: "A - Weiss Yellow"])
+		, new_card([rarity: "C", color: "A - Weiss Yellow"])
+		, new_card([rarity: "C", color: "A - Weiss Yellow"])
+		, new_card([rarity: "C", color: "A - Weiss Yellow"])
+		, new_card([rarity: "C", color: "A - Weiss Yellow"])
+		, new_card([rarity: "C", color: "A - Weiss Yellow"])
+		, new_card([rarity: "C", color: "A - Weiss Yellow"])
+		, new_card([rarity: "C", color: "A - Weiss Yellow"])
+		, new_card([rarity: "C", color: "A - Weiss Yellow"])
+		, new_card([rarity: "C", color: "A - Weiss Yellow"])
+		, new_card([rarity: "C", color: "A - Weiss Yellow"])
+		, new_card([rarity: "CC", color: "A - Weiss Yellow"])
+		, new_card([rarity: "CC", color: "A - Weiss Yellow"])
+		]
+add cards script:
+	name: &Extra Booster B - Weiss Green
+	description: Adds an Extra Booster's worth of color.
+	script:
+		[ new_card([rarity: "R", color: "B - Weiss Green"])
+		, new_card([rarity: "R", color: "B - Weiss Green"])
+		, new_card([rarity: "R", color: "B - Weiss Green"])
+		, new_card([rarity: "R", color: "B - Weiss Green"])
+		, new_card([rarity: "R", color: "B - Weiss Green"])
+		, new_card([rarity: "R", color: "B - Weiss Green"])
+		, new_card([rarity: "C", color: "B - Weiss Green"])
+		, new_card([rarity: "C", color: "B - Weiss Green"])
+		, new_card([rarity: "C", color: "B - Weiss Green"])
+		, new_card([rarity: "C", color: "B - Weiss Green"])
+		, new_card([rarity: "C", color: "B - Weiss Green"])
+		, new_card([rarity: "C", color: "B - Weiss Green"])
+		, new_card([rarity: "C", color: "B - Weiss Green"])
+		, new_card([rarity: "C", color: "B - Weiss Green"])
+		, new_card([rarity: "C", color: "B - Weiss Green"])
+		, new_card([rarity: "C", color: "B - Weiss Green"])
+		, new_card([rarity: "CC", color: "B - Weiss Green"])
+		, new_card([rarity: "CC", color: "B - Weiss Green"])
+		]
+add cards script:
+	name: &Extra Booster C - Weiss Red
+	description: Adds an Extra Booster's worth of color.
+	script:
+		[ new_card([rarity: "R", color: "C - Weiss Red"])
+		, new_card([rarity: "R", color: "C - Weiss Red"])
+		, new_card([rarity: "R", color: "C - Weiss Red"])
+		, new_card([rarity: "R", color: "C - Weiss Red"])
+		, new_card([rarity: "R", color: "C - Weiss Red"])
+		, new_card([rarity: "R", color: "C - Weiss Red"])
+		, new_card([rarity: "C", color: "C - Weiss Red"])
+		, new_card([rarity: "C", color: "C - Weiss Red"])
+		, new_card([rarity: "C", color: "C - Weiss Red"])
+		, new_card([rarity: "C", color: "C - Weiss Red"])
+		, new_card([rarity: "C", color: "C - Weiss Red"])
+		, new_card([rarity: "C", color: "C - Weiss Red"])
+		, new_card([rarity: "C", color: "C - Weiss Red"])
+		, new_card([rarity: "C", color: "C - Weiss Red"])
+		, new_card([rarity: "C", color: "C - Weiss Red"])
+		, new_card([rarity: "C", color: "C - Weiss Red"])
+		, new_card([rarity: "CC", color: "C - Weiss Red"])
+		, new_card([rarity: "CC", color: "C - Weiss Red"])
+		]
+add cards script:
+	name: &Extra Booster D - Weiss Blue
+	description: Adds an Extra Booster's worth of color.
+	script:
+		[ new_card([rarity: "R", color: "D - Weiss Blue"])
+		, new_card([rarity: "R", color: "D - Weiss Blue"])
+		, new_card([rarity: "R", color: "D - Weiss Blue"])
+		, new_card([rarity: "R", color: "D - Weiss Blue"])
+		, new_card([rarity: "R", color: "D - Weiss Blue"])
+		, new_card([rarity: "R", color: "D - Weiss Blue"])
+		, new_card([rarity: "C", color: "D - Weiss Blue"])
+		, new_card([rarity: "C", color: "D - Weiss Blue"])
+		, new_card([rarity: "C", color: "D - Weiss Blue"])
+		, new_card([rarity: "C", color: "D - Weiss Blue"])
+		, new_card([rarity: "C", color: "D - Weiss Blue"])
+		, new_card([rarity: "C", color: "D - Weiss Blue"])
+		, new_card([rarity: "C", color: "D - Weiss Blue"])
+		, new_card([rarity: "C", color: "D - Weiss Blue"])
+		, new_card([rarity: "C", color: "D - Weiss Blue"])
+		, new_card([rarity: "C", color: "D - Weiss Blue"])
+		, new_card([rarity: "CC", color: "D - Weiss Blue"])
+		, new_card([rarity: "CC", color: "D - Weiss Blue"])
+		]
+#### packs
+pack type:
+	name: common
+	filter: card.rarity == "C"
+pack type:
+	name: uncommon
+	filter: card.rarity == "U"
+pack type:
+	name: rare
+	filter: card.rarity == "R"
+pack type:
+	name: double rare
+	filter: card.rarity == "RR"
+pack type:
+	name: climax rare
+	filter: card.rarity == "CR"
+pack type:
+	name: climax common
+	filter: card.rarity == "CC"
+
+pack type:
+	name: double rare or rare
+	selectable: false
+	select: proportional
+	item:
+		name: double rare
+		weight: 1
+	item:
+		name: rare
+		weight: 3
+pack type:
+	name: climax common or climax rare
+	selectable: false
+	select: proportional
+	item:
+		name: climax rare
+		weight: 1
+	item:
+		name: climax common
+		weight: 3
+pack type:
+	name: foil common or rare
+	selectable: false
+	select: proportional
+	item:
+		name: rare
+		weight: 1
+	item:
+		name: common
+		weight: 1
+		
+pack type:
+	name: standard booster pack
+	item:
+		name: double rare or rare
+		amount: 1
+	item:
+		name: uncommon
+		amount: 2
+	item:
+		name: common
+		amount: 4
+	item:
+		name: climax common or climax rare
+pack type:
+	name: extra booster pack
+	item:
+		name: rare
+		amount: 1
+	item
+		name: foil common or rare
+		amount: 2
+	item:
+		name: common
+		amount: 2
+	item:
+		name: climax common
+		amount: 1

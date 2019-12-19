@@ -1,0 +1,22 @@
+/***
+	Original MSE Template Created By Chairman
+	Based off the template by berander
+	https://www.deviantart.com/berander/art/Weiss-Schwarz-MSE-Template-540676659
+***/
+
+Update 12-4-2019
+- Added ability to create 3-soul characters
+- Increased support for different Backup values
+- Added CHOICE trigger
+- Added Resonance, Force keywords
+- Many quality of life fixes
+
+Update 9-9-2019
+- Changed the effect text font
+
+Update 1-22-2019
+
+- Added CXCOMBO, Fusion, Sunder, Alarm keywords
+- Added STANDBY trigger
+- Defaulted sort to Bushiroad sort (Color-Rarity-Level-Cost-Power)
+- Improved quality of images

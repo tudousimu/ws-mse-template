@@ -1,0 +1,239 @@
+mse version: 2.0.0
+version: 2015-01-23
+short name: normal
+position hint: 001
+icon: act.png
+
+image font size: 12
+horizontal space: 2
+symbol:
+	code: ACT
+	image: act.png
+symbol:
+	code: ALARM
+	image: alarm.png
+symbol:
+	code: CONT
+	image: cont.png
+symbol:
+	code: AUTO
+	image: auto.png
+symbol:
+	code: BACKUP
+	image: backup.png
+symbol:
+	code: COUNTER
+	image: backupmini.png
+symbol:
+	code: BOOK
+	image: booktrigger.png
+symbol:
+	code: P0
+	image: zero.png
+symbol:
+	code: P1
+	image: one.png
+symbol:
+	code: P2
+	image: two.png
+symbol:
+	code: P3
+	image: three.png
+symbol:
+	code: P4
+	image: four.png
+symbol:
+	code: P5
+	image: five.png
+symbol:
+	code: P6
+	image: six.png
+symbol:
+	code: WIND
+	image: btrigger.png
+symbol:
+	code: SHOT
+	image: shottrigger.png
+symbol:
+	code: SHIFT
+	image: clockshiftmini.png
+symbol:
+	code: GOLDBAR
+	image: goldtrigger.png
+symbol:
+	code: DOOR
+	image: doortrigger.png
+symbol:
+	code: GATE
+	image: gatetrigger.png
+symbol:
+	code: BAG
+	image: bagtrigger.png
+symbol:
+	code: STANDBY
+	image: standbytrigger.png
+symbol:
+	code: CHOICE
+	image: choicetrigger.png
+symbol:
+	code: STAND
+	image: stand.png
+symbol:
+	code: REST
+	image: rest.png
+symbol:
+	code: REVERSE
+	image: reverse.png
+symbol:
+	code: ENCORE
+	image: encore.png
+symbol:
+	code: BOND
+	image: bond.png
+symbol:
+	code: CHANGE
+	image: change.png
+symbol:
+	code: ASSIST
+	image: assist.png
+symbol:
+	code: BRAINSTORM
+	image: brainstorm.png
+symbol:
+	code: ACCELERATE
+	image: accelerate.png
+symbol:
+	code: RESONATE
+	image: resonate.png
+symbol:
+	code: MEMORY
+	image: memory.png
+symbol:
+	code: EXPERIENCE
+	image: experience.png
+symbol:
+	code: GREATPERFORMANCE
+	image: greatperformance.png
+symbol:
+	code: FUSION
+	image: fusion.png
+symbol:
+	code: SUNDER
+	image: sunder.png
+symbol:
+	code: CXCOMBO
+	image: cxcombo.png
+symbol:
+	code: L0SHIFT
+	image: l0shift.png
+symbol:
+	code: L1SHIFT
+	image: l1shift.png
+symbol:
+	code: L2SHIFT
+	image: l2shift.png
+symbol:
+	code: L3SHIFT
+	image: l3shift.png
+symbol:
+	code: L0B0
+	image: l0b0.png
+symbol:
+	code: L0B500
+	image: l0b500.png
+symbol:
+	code: L0B1000
+	image: l0b1000.png
+symbol:
+	code: L1B0
+	image: l1b0.png
+symbol:
+	code: L1B500
+	image: l1b500.png
+symbol:
+	code: L1B1000
+	image: l1b1000.png
+symbol:
+	code: L1B1500
+	image: l1b1500.png
+symbol:
+	code: L1B2000
+	image: l1b2000.png
+symbol:
+	code: L1B2500
+	image: l1b2500.png
+symbol:
+	code: L1B3000
+	image: l1b3000.png
+symbol:
+	code: L2B0
+	image: l2b0.png
+symbol:
+	code: L2B500
+	image: l2b500.png
+symbol:
+	code: L2B1500
+	image: l2b1500.png
+symbol:
+	code: L2B2000
+	image: l2b2000.png
+symbol:
+	code: L2B2500
+	image: l2b2500.png
+symbol:
+	code: L2B3000
+	image: l2b3000.png
+symbol:
+	code: L2B4000
+	image: l2b4000.png
+	
+#######################################################
+# Insert-symbol menu
+insert symbol menu:
+	item:
+		name: Trigger
+		item: SOUL
+		item: WIND
+		item: SHOT
+		item: BAG
+		item: GOLDBAR
+		item: DOOR
+		item: STANDBY
+		item: BOOK
+		item: GATE
+		item: CHOICE
+	item:
+		name: Keyword
+		item: ACCELERATE
+		item: ALARM
+		item: ASSIST
+		item: BOND
+		item: CHANGE
+		item: BACKUP
+		item: BRAINSTORM
+		item: ENCORE
+		item: EXPERIENCE
+		item: FORCE
+		item: FUSION
+		item: GREATPERFORMANCE
+		item: MEMORY
+		item: RECOLLECTION
+		item: RESONATE
+		item: SUNDER
+	item:
+		name: Symbol
+		item: ACT
+		item: AUTO
+		item: CONT
+		item: STAND
+		item: REST
+		item: REVERSE
+		item: CXCOMBO
+		item: P1
+		item: P2
+		item: P3
+		item: P4
+		item: P5
+		item: P6
+		item: COUNTER
+		item: SHIFT
