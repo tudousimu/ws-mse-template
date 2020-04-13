@@ -26,7 +26,7 @@ P6
 // Climax or Effect Symbols
 DRAW
 WIND
-BURN
+SHOT
 DOOR
 GOLDBAR
 GATE
